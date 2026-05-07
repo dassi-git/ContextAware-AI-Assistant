@@ -7,6 +7,7 @@ from llama_index.core import StorageContext, load_index_from_storage
 from llama_index.core.workflow import Workflow, Event, StartEvent, StopEvent, step
 from llama_index.embeddings.openai import OpenAIEmbedding
 from llama_index.llms.openai import OpenAI
+from llama_index.utils.workflow import draw_all_possible_flows
 
 ssl._create_default_https_context = ssl._create_unverified_context
 os.environ["PYTHONHTTPSVERIFY"] = "0"
@@ -87,4 +88,19 @@ async def chat_response(message, history):
 demo = gr.ChatInterface(fn=chat_response, title="סוכן AI משולב (RAG + Extraction)")
 
 if __name__ == "__main__":
+    print("🎨 מנסה לייצר תרשים זרימה...")
+    try:
+        # יצירת התרשים
+        draw_all_possible_flows(RAGWorkflow, filename="workflow_graph.html")
+        
+        # בדיקה אם הקובץ באמת נוצר
+        if os.path.exists("workflow_graph.html"):
+            full_path = os.path.abspath("workflow_graph.html")
+            print(f"✅ הצלחתי! התרשים נוצר בכתובת:\n{full_path}")
+        else:
+            print("❌ הקוד רץ אבל הקובץ לא נמצא בתיקייה.")
+    except Exception as e:
+        print(f"⚠️ שגיאה ביצירת התרשים: {e}")
+
+    print("🚀 מפעיל את ממשק Gradio...")
     demo.launch()
