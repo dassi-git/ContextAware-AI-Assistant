@@ -1,0 +1,62 @@
+[
+    {
+        "type": "Decision",
+        "title": "תמיכה בשפות",
+        "description": "המערכת תתמוך בשפות עברית ואנגלית בלבד בשלב הראשון.",
+        "source_file": "plan.md"
+    },
+    {
+        "type": "Rule",
+        "title": "הנחיית RTL",
+        "description": "כל ממשק המשתמש בעברית חייב לתמוך ב-Right-to-Left באופן מלא.",
+        "source_file": "plan.md"
+    },
+    {
+        "type": "Decision",
+        "title": "שינוי ב-DB",
+        "description": "נוספה טבלת 'users_settings' לאחסון העדפות שפה.",
+        "source_file": "plan.md"
+    },
+    {
+        "type": "Warning",
+        "title": "מנגנון ה-Authentication",
+        "description": "מנגנון ה-Authentication הוא רכיב קריטי - אין לשנות את ה-JWT Logic ללא אישור.",
+        "source_file": "plan.md"
+    },
+    {
+        "type": "Decision",
+        "title": "שימוש ב-React כפריימוורק מרכזי בצד הלקוח",
+        "description": "הוחלט להשתמש ב-React כפריימוורק מרכזי בצד הלקוח.",
+        "source_file": "tech_spec.md"
+    },
+    {
+        "type": "Rule",
+        "title": "צבעי המותג",
+        "description": "צבעי המותג שנבחרו הם כחול עמוק (#00008B) ולבן.",
+        "source_file": "tech_spec.md"
+    },
+    {
+        "type": "Rule",
+        "title": "עיצוב כפתורים",
+        "description": "כל כפתורי המערכת צריכים להיות עם פינות מעוגלות של 8px.",
+        "source_file": "tech_spec.md"
+    },
+    {
+        "type": "Decision",
+        "title": "שימוש ב-PostgreSQL כמסד נתונים",
+        "description": "יש להשתמש ב-PostgreSQL כמסד נתונים יחסי.",
+        "source_file": "tech_spec.md"
+    },
+    {
+        "type": "Decision",
+        "title": "העברת קבצי העיצוב ל-Tailwind CSS",
+        "description": "מעבירים את כל קבצי העיצוב לשימוש ב-Tailwind CSS.",
+        "source_file": "insights.md"
+    },
+    {
+        "type": "Warning",
+        "title": "דרישות זיכרון עבור Docker",
+        "description": "שימוש ב-Docker בסביבת פיתוח דורש לפחות 8GB RAM פנוי.",
+        "source_file": "insights.md"
+    }
+]
